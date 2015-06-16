@@ -2,22 +2,15 @@
 #include "Elemento.h"
 using namespace std;
 
-class ElementoPersona : Elemento {
+class ElementoPersona : public Elemento {
 
-	friend ostream & operator<<(ostream &, ElementoPersona &);
-
-private:
-	Elemento * raiz;
+protected:
+	int iD;
+	string nombre;
 
 public:
-	ElementoPersona();
+	ElementoPersona(int, string);
 	virtual ~ElementoPersona();
-	void insertarElemento(Elemento *);
-
-private:
-	void insertarElementoRec(Elemento *, Elemento *);
-	void imprimir(Elemento *, ostream &, int);
-	void destruirRec(Elemento *);
+	virtual int compareTo(Elemento *);
+	virtual void imprimir(ostream &) const;
 };
-
-ostream & operator<<(ostream &, ElementoPersona &);

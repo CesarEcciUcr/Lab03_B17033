@@ -2,8 +2,9 @@
 #include "ElementoDouble.h"
 
 
-ElementoDouble::ElementoDouble(double i) : Elemento(), i(i)
+ElementoDouble::ElementoDouble(double i)
 {
+	this->i = i;
 }
 
 ElementoDouble::~ElementoDouble() {
